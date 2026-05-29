@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/convite"
+  to = "/convite.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacidade"
+  to = "/index.html"
+  status = 200
