@@ -8,20 +8,13 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #F4F6FB;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+      background: #F4F6FB; min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 24px;
     }
     .card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 36px 28px;
-      width: 100%;
-      max-width: 420px;
+      background: #fff; border-radius: 24px; padding: 36px 28px;
+      width: 100%; max-width: 420px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
       border: 1px solid rgba(74,144,217,0.1);
     }
@@ -30,38 +23,40 @@
     .subtitulo { text-align: center; font-size: 14px; color: #6B7FA3; margin-bottom: 28px; }
     label { display: block; font-size: 12px; font-weight: 700; color: #6B7FA3; margin-bottom: 7px; }
     input {
-      width: 100%; background: #F0F4FA; border: 1px solid rgba(74,144,217,0.15);
-      border-radius: 12px; padding: 13px 16px; font-size: 15px; color: #1A2B4A;
-      margin-bottom: 16px; outline: none; transition: border-color 0.2s;
+      width: 100%; background: #F0F4FA;
+      border: 1px solid rgba(74,144,217,0.15);
+      border-radius: 12px; padding: 13px 16px; font-size: 15px;
+      color: #1A2B4A; margin-bottom: 16px; outline: none;
     }
     input:focus { border-color: #7C6FFF; }
     button {
       width: 100%; background: #7C6FFF; color: #fff; border: none;
-      border-radius: 13px; padding: 15px; font-size: 15px; font-weight: 700;
-      cursor: pointer; transition: opacity 0.2s;
+      border-radius: 13px; padding: 15px; font-size: 15px;
+      font-weight: 700; cursor: pointer;
     }
-    button:hover { opacity: 0.9; }
     button:disabled { opacity: 0.6; cursor: not-allowed; }
     .erro {
-      background: rgba(232,69,106,0.08); border: 1px solid rgba(232,69,106,0.2);
-      border-radius: 10px; padding: 12px; color: #E8456A; font-size: 13px;
-      margin-bottom: 16px; display: none;
+      background: rgba(232,69,106,0.08);
+      border: 1px solid rgba(232,69,106,0.2);
+      border-radius: 10px; padding: 12px; color: #E8456A;
+      font-size: 13px; margin-bottom: 16px; display: none;
     }
-    .loading { text-align: center; color: #6B7FA3; font-size: 14px; padding: 20px 0; }
     .spinner {
-      width: 40px; height: 40px; border: 3px solid rgba(124,111,255,0.2);
+      width: 40px; height: 40px;
+      border: 3px solid rgba(124,111,255,0.2);
       border-top-color: #7C6FFF; border-radius: 50%;
       animation: spin 0.8s linear infinite; margin: 0 auto 16px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .sucesso { text-align: center; display: none; }
+    .loading { text-align: center; color: #6B7FA3; font-size: 14px; padding: 20px 0; }
+    .sucesso { display: none; text-align: center; }
     .sucesso .icone { font-size: 56px; margin-bottom: 16px; }
     .sucesso h2 { font-size: 22px; font-weight: 900; color: #1A2B4A; margin-bottom: 8px; }
     .sucesso p { font-size: 14px; color: #6B7FA3; margin-bottom: 24px; line-height: 1.6; }
     .badge-store {
       display: inline-block; background: #1A2B4A; color: #fff;
-      border-radius: 12px; padding: 12px 24px; font-size: 14px;
-      font-weight: 700; text-decoration: none;
+      border-radius: 12px; padding: 12px 24px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
     }
     .invalido { display: none; text-align: center; }
   </style>
@@ -70,16 +65,14 @@
   <div class="card">
     <div class="logo">🌱</div>
 
-    <!-- Loading inicial -->
     <div id="loading" class="loading">
       <div class="spinner"></div>
       <p>Verificando seu convite...</p>
     </div>
 
-    <!-- Formulário de senha -->
     <div id="formulario" style="display:none">
       <div class="titulo">Criar sua senha</div>
-      <div class="subtitulo">Você foi convidado para o Pleno como psicólogo. Crie sua senha para ativar a conta.</div>
+      <div class="subtitulo">Crie sua senha para ativar sua conta no Pleno.</div>
       <div class="erro" id="erro"></div>
       <label>Nova senha</label>
       <input type="password" id="senha" placeholder="Mínimo 6 caracteres" />
@@ -88,17 +81,15 @@
       <button id="btnSalvar" onclick="salvarSenha()">Ativar minha conta</button>
     </div>
 
-    <!-- Sucesso -->
     <div class="sucesso" id="sucesso">
       <div class="icone">✅</div>
       <h2>Conta ativada!</h2>
-      <p>Sua senha foi criada com sucesso.<br/>Baixe o app Pleno e faça login com seu email.</p>
+      <p>Senha criada com sucesso!<br/>Baixe o app Pleno e faça login com seu email.</p>
       <a class="badge-store" href="https://play.google.com/store/apps/details?id=com.pleno.app" target="_blank">
         📲 Baixar o Pleno
       </a>
     </div>
 
-    <!-- Token inválido -->
     <div class="invalido" id="invalido">
       <div style="font-size:48px; margin-bottom:12px;">⚠️</div>
       <div class="titulo">Link inválido ou expirado</div>
@@ -115,47 +106,55 @@
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56d3lmenp2amZ2Y3hyeWNnenQiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc0NjA1NTYyMywiZXhwIjoyMDYxNjMxNjIzfQ.dp1FDobLFcFNLiMCGw1bNMFHUaEX0HmCaHFLfnOAink';
 
     const { createClient } = supabase;
-
-    // ✅ Deixa o Supabase processar o token automaticamente
-    const client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-      auth: {
-        detectSessionInUrl: true,
-        persistSession: true,
-        autoRefreshToken: true,
-      }
-    });
+    const client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     function mostrar(id) {
-      ['loading', 'formulario', 'sucesso', 'invalido'].forEach(el => {
+      ['loading','formulario','sucesso','invalido'].forEach(el => {
         document.getElementById(el).style.display = el === id ? 'block' : 'none';
       });
     }
 
-    // ✅ Espera o Supabase processar o token e disparar o evento
-    client.auth.onAuthStateChange(async (event, session) => {
-      console.log('Auth event:', event, session?.user?.email);
+    // ✅ Abordagem direta: lê o hash e tenta criar sessão manualmente
+    async function iniciar() {
+      const hash = window.location.hash;
 
-      if (event === 'SIGNED_IN' && session) {
-        // Usuário logado com sucesso via token do convite
-        mostrar('formulario');
-      } else if (event === 'INITIAL_SESSION' && !session) {
-        // Nenhuma sessão — token inválido ou já usado
-        const hash = window.location.hash;
-        if (hash.includes('access_token') || hash.includes('error')) {
-          mostrar('invalido');
-        } else {
-          mostrar('invalido');
-        }
+      // Sem token no hash — link inválido
+      if (!hash.includes('access_token')) {
+        mostrar('invalido');
+        return;
       }
-    });
 
-    // Timeout de segurança — se demorar mais de 5s mostra erro
-    setTimeout(() => {
-      const loading = document.getElementById('loading');
-      if (loading.style.display !== 'none') {
+      const params = new URLSearchParams(hash.substring(1));
+      const accessToken = params.get('access_token');
+      const refreshToken = params.get('refresh_token') || '';
+      const type = params.get('type');
+
+      if (!accessToken) {
+        mostrar('invalido');
+        return;
+      }
+
+      try {
+        // ✅ Tenta criar a sessão com os tokens do hash
+        const { data, error } = await client.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken,
+        });
+
+        if (error || !data.session) {
+          console.error('Erro setSession:', error);
+          mostrar('invalido');
+          return;
+        }
+
+        // ✅ Sessão criada — mostra formulário
+        mostrar('formulario');
+
+      } catch (e) {
+        console.error('Erro:', e);
         mostrar('invalido');
       }
-    }, 5000);
+    }
 
     async function salvarSenha() {
       const senha = document.getElementById('senha').value;
@@ -179,7 +178,6 @@
       btn.disabled = true;
       btn.textContent = 'Ativando...';
 
-      // ✅ Aqui o usuário já está logado, só atualiza a senha
       const { error } = await client.auth.updateUser({ password: senha });
 
       if (error) {
@@ -192,6 +190,9 @@
 
       mostrar('sucesso');
     }
+
+    // Inicia quando a página carrega
+    window.addEventListener('load', iniciar);
   </script>
 </body>
 </html>
