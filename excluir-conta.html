@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excluir conta — Pleno</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #F7F8FC;
+      color: #1A2B4A;
+      min-height: 100vh;
+    }
+    .header {
+      background: #fff;
+      border-bottom: 1px solid rgba(74,144,217,0.1);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4A90D9, #6B5FD4);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 900; font-size: 18px;
+    }
+    .logo-text { font-size: 22px; font-weight: 900; color: #1A2B4A; }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #1A2B4A;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: #6B7FA3;
+      margin-bottom: 32px;
+      line-height: 22px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .card h2 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1A2B4A;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .badge-blue { background: rgba(74,144,217,0.12); color: #4A90D9; }
+    .badge-red { background: rgba(232,69,106,0.1); color: #E8456A; }
+    .badge-green { background: rgba(45,191,126,0.12); color: #2DBF7E; }
+    ol { padding-left: 0; list-style: none; }
+    ol li {
+      font-size: 14px;
+      color: #1A2B4A;
+      line-height: 22px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(74,144,217,0.07);
+      display: flex;
+      gap: 10px;
+    }
+    ol li:last-child { border-bottom: none; }
+    .step-num {
+      width: 22px; height: 22px;
+      background: rgba(74,144,217,0.1);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 800;
+      color: #4A90D9;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .data-list { list-style: none; padding: 0; }
+    .data-list li {
+      font-size: 14px;
+      color: #1A2B4A;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(74,144,217,0.07);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .data-list li:last-child { border-bottom: none; }
+    .dot-green { width: 7px; height: 7px; border-radius: 50%; background: #2DBF7E; flex-shrink: 0; }
+    .dot-yellow { width: 7px; height: 7px; border-radius: 50%; background: #F0A500; flex-shrink: 0; }
+    .email-btn {
+      display: block;
+      background: #E8456A;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      padding: 15px 24px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 20px;
+      transition: opacity 0.2s;
+    }
+    .email-btn:hover { opacity: 0.88; }
+    .note {
+      background: rgba(240,165,0,0.08);
+      border-left: 3px solid #F0A500;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #6B7FA3;
+      margin-top: 14px;
+      line-height: 20px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #A8B4C8;
+      padding: 32px 24px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">P</div>
+  <span class="logo-text">Pleno</span>
+</div>
+
+<div class="container">
+  <h1>Excluir conta e dados</h1>
+  <p class="subtitle">
+    No Pleno, você tem controle total sobre seus dados. Veja abaixo como solicitar a exclusão da sua conta ou apenas de dados específicos.
+  </p>
+
+  <!-- Exclusão completa da conta -->
+  <div class="card">
+    <h2>
+      <span class="badge badge-red">1</span>
+      Excluir minha conta completa
+    </h2>
+    <ol>
+      <li>
+        <span class="step-num">1</span>
+        <span>Abra o app Pleno no seu celular</span>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <span>Acesse a aba <strong>Perfil</strong> (ícone no canto inferior direito)</span>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <span>Role até o final da página e toque em <strong>"Excluir minha conta"</strong></span>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <span>Confirme a exclusão. Sua conta e dados serão removidos em até <strong>30 dias</strong></span>
+      </li>
+    </ol>
+    <div class="note">
+      Não consegue acessar o app? Envie um e-mail para <strong>teleplenoapp@gmail.com</strong> com o assunto "Excluir conta" e seu e-mail cadastrado. Responderemos em até 5 dias úteis.
+    </div>
+    <a href="mailto:teleplenoapp@gmail.com?subject=Solicita%C3%A7%C3%A3o%20de%20exclus%C3%A3o%20de%20conta%20Pleno" class="email-btn">
+      Solicitar exclusão por e-mail
+    </a>
+  </div>
+
+  <!-- O que é excluído -->
+  <div class="card">
+    <h2>
+      <span class="badge badge-blue">2</span>
+      O que é excluído
+    </h2>
+    <ul class="data-list">
+      <li><span class="dot-green"></span> Conta e credenciais de acesso</li>
+      <li><span class="dot-green"></span> Perfil (nome, foto, e-mail)</li>
+      <li><span class="dot-green"></span> Diário de humor e registros pessoais</li>
+      <li><span class="dot-green"></span> Posts e comentários no feed</li>
+      <li><span class="dot-green"></span> Histórico de sessões</li>
+      <li><span class="dot-green"></span> Dados de desafios e conquistas</li>
+      <li><span class="dot-yellow"></span> Registros financeiros de compras (mantidos por 5 anos por obrigação legal)</li>
+    </ul>
+  </div>
+
+  <!-- Exclusão parcial de dados -->
+  <div class="card">
+    <h2>
+      <span class="badge badge-green">3</span>
+      Excluir apenas dados específicos
+    </h2>
+    <p style="font-size:14px; color:#6B7FA3; line-height:22px; margin-bottom:14px;">
+      Você pode excluir dados específicos sem encerrar sua conta:
+    </p>
+    <ul class="data-list">
+      <li><span class="dot-green"></span> <strong>Diário:</strong> exclua entradas individuais dentro do app, aba Diário</li>
+      <li><span class="dot-green"></span> <strong>Posts do feed:</strong> toque no "×" em qualquer post seu</li>
+      <li><span class="dot-green"></span> <strong>Foto de perfil:</strong> substitua ou remova na tela de Perfil</li>
+    </ul>
+    <div class="note">
+      Para solicitar a exclusão de dados específicos não listados acima, entre em contato: <strong>teleplenoapp@gmail.com</strong>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Pleno · Saúde mental acessível · teleplenoapp@gmail.com<br/>
+  Desenvolvido por Fillipe Martins Santos Libanio
+</div>
+
+</body>
+</html>
